@@ -17,6 +17,6 @@ module.exports = function counter(sanitizedData) {
             flag = true;
         }
     });
-    console.log('\n\n\n\n\n\n\nTOTAL NUMBER OF STEPS DETECTED = ' + steps);
+    console.log('\n\n\n\nTOTAL NUMBER OF STEPS DETECTED = '+steps);
     console.log('\nEND OF EXECUTION...');
 };

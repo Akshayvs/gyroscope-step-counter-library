@@ -1,15 +1,11 @@
-/**
- * Created by asonawane on 10/19/16.
- */
 'use strict';
 
 var fs = require('fs');
 var path = require('path');
 var absolutePath = process.argv[2];
 var dataCleaner = require('./dataCleaner.js');
-var relativePath = path.relative('/Users/asonawane/WebstormProjects/traversal', absolutePath);
 
-fs.readFile(relativePath, function (err, file) {
+fs.readFile(absolutePath, function (err, file) {
     if (err) {
         console.log('ABORT! - error in reading file from the path given : ' + err);
     } else {
@@ -32,7 +28,9 @@ fs.readFile(relativePath, function (err, file) {
             zAxisValues.push(element[3]);
         });
         console.log("\nSTEP1: Input Parsed Successfully\n");
-// array X is selected after plotting all 3 axis readings on a graph and observing the differences.
+
+// array X is selected after manually  plotting all 3 axis readings on a graph and observing the differences.
+
         dataCleaner(xAxisValues);     // call is made to DataCleaner for filtering the data
     }
 });
